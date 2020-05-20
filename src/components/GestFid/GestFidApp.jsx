@@ -41,7 +41,7 @@ class LoginComponent extends Component {
                <p>Accedi alla App GestFid</p>
                Nome Utente: <input type="text" name="userId" value={this.state.userId} onChange={this.gestMod} />
                Password: <input type="password" name="password" value={this.state.password} onChange={this.gestMod}/>
-               <button onClick={this.login}>Accedi</button>
+               <button type="button" class="btn btn-primary" onClick={this.login}>Accedi</button>
                <ConnexOkMsg isLogged={this.state.isLogged}/>
                <ConnexKoMsg noLogged={this.state.noLogged} />
             </div>
