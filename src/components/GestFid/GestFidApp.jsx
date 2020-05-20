@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import WelcomeComponent from './Welcome/Welcome';
 import ClientiComponent from './Clienti/Clienti';
 import LoginComponent from './Login/LoginComponent';
+import HeaderComponent from '../Header/HeaderComponent';
 
 export default class GestFidApp extends Component {
     render() {
         return (
             <div className={GestFidApp}>     
+                <HeaderComponent />
                 <Router>
                     <Switch>
                         <Route path="/" exact component={LoginComponent} />
