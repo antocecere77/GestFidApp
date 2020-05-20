@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import WelcomeComponent from './Welcome';
 
 export default class GestFidApp extends Component {
     render() {
         return (
-            <div className={GestFidApp}>
-                <p>Accedi alla App GestFid</p>
-                <LoginComponent />
+            <div className={GestFidApp}>     
+                <Router>
+                    <Route path="/" exact component={LoginComponent} />
+                    <Route path="/login" component={LoginComponent} />
+                    <Route path="/welcome" component={WelcomeComponent} />
+                </Router>                           
             </div>
         );
     }
@@ -23,6 +29,7 @@ class LoginComponent extends Component {
     render() {
         return (
             <div>
+               <p>Accedi alla App GestFid</p>
                Nome Utente: <input type="text" name="userId" value={this.state.userId} onChange={this.gestMod} />
                Password: <input type="password" name="password" value={this.state.password} onChange={this.gestMod}/>
                <button onClick={this.login}>Accedi</button>
