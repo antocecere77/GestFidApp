@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import WelcomeComponent from './Welcome';
+import ClientiComponent from './Clienti';
 
 export default class GestFidApp extends Component {
     render() {
@@ -12,6 +13,7 @@ export default class GestFidApp extends Component {
                         <Route path="/" exact component={LoginComponent} />
                         <Route path="/login" component={LoginComponent} />
                         <Route path="/welcome/:userid" component={WelcomeComponent} />
+                        <Route path="/clienti" component={ClientiComponent} />
                         <Route component={ErrorComponent} />
                     </Switch>
                 </Router>                           
