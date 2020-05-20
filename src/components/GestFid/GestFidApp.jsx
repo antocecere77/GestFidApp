@@ -21,8 +21,8 @@ class LoginComponent extends Component {
     render() {
         return (
             <div>
-               Nome Utente: <input type="text" name="user" value={this.state.userId} onChange={this.gestModUser} />
-               Password: <input type="password" name="password" value={this.state.password} onChange={this.gestModPassword}/>
+               Nome Utente: <input type="text" name="userId" value={this.state.userId} onChange={this.gestMod} />
+               Password: <input type="password" name="password" value={this.state.password} onChange={this.gestMod}/>
                <button onClick={this.login}>Accedi</button>
             </div>
         );
@@ -33,15 +33,9 @@ class LoginComponent extends Component {
         console.log(this.state.password);
     }
 
-    gestModUser = (event) => {
+    gestMod = (event) => {
         this.setState({
-            userId: event.target.value
+            [event.target.name]: event.target.value
         });
-    }
-
-    gestModPassword = (event) => {
-        this.setState({
-            password: event.target.value
-        });
-    }
+    }    
 }
