@@ -11,7 +11,7 @@ export default class GestFidApp extends Component {
                     <Switch>
                         <Route path="/" exact component={LoginComponent} />
                         <Route path="/login" component={LoginComponent} />
-                        <Route path="/welcome" component={WelcomeComponent} />
+                        <Route path="/welcome/:userid" component={WelcomeComponent} />
                         <Route component={ErrorComponent} />
                     </Switch>
                 </Router>                           
@@ -54,6 +54,7 @@ class LoginComponent extends Component {
                 isLogged: true,
                 noLogged: false
             });
+            this.props.history.push(`/welcome/${this.state.userId}`); 
         } else {
             this.setState({
                 isLogged: false,
