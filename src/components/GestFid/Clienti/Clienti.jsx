@@ -71,7 +71,7 @@ export default class ClientiComponent extends Component {
                             <tbody>
                             {
                                 this.state.clienti.map (
-                                    cliente => 
+                                    (cliente, index) => 
                                     <tr key={cliente.codfid}>
                                         <td>{cliente.codfid}</td>
                                         <td>{cliente.nome}</td>
@@ -86,7 +86,7 @@ export default class ClientiComponent extends Component {
                                             </button>
                                         </td>
                                         <td>
-                                            <button className="btn btn-warning table-buttons">
+                                            <button className="btn btn-warning table-buttons" onClick={() => this.elimina(index)}>
                                                 <i className="fa fa-minus" aria-hidden="true"></i> Elimina
                                             </button>
                                         </td>
@@ -98,6 +98,13 @@ export default class ClientiComponent extends Component {
                 </div>
             </section>
         )
+    }
+
+    elimina = (indexCliente) => {
+        console.log("Premuto il tasto elimina! Index: " + indexCliente);
+        const newClienti = [...this.state.clienti];
+        newClienti.splice(indexCliente, 1);
+        this.setState({ clienti: newClienti});
     }
 }
 
