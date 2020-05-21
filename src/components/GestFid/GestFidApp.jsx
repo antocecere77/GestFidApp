@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import WelcomeComponent from './Welcome/Welcome';
 import ClientiComponent from './Clienti/Clienti';
 import LoginComponent from './Login/LoginComponent';
-import HeaderComponent from '../Header/HeaderComponent';
+import HeaderComponent from './Header/HeaderComponent';
+import FooterComponent from './Footer/FooterComponent';
 
 export default class GestFidApp extends Component {
     render() {
@@ -19,7 +20,8 @@ export default class GestFidApp extends Component {
                         <Route path="/clienti" component={ClientiComponent} />
                         <Route component={ErrorComponent} />
                     </Switch>
-                </Router>                           
+                </Router>           
+                <FooterComponent />                
             </div>
         );
     }
