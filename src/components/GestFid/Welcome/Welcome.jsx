@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import SalutiService from '../services/API/Saluti/Saluti';
 
 export default class Welcome extends Component {
+
+    state = {
+        salutiMsg: ''
+    }
+
     render() {
         return (
             <div className="WelcomeComponent">
@@ -14,6 +19,8 @@ export default class Welcome extends Component {
                 <p>Saluti {this.props.match.params.userid}, clicca <Link to="/clienti">qui</Link>  per vedere i clienti disponibili</p>
 
                 <button type="button" className="btn btn-primary" onClick={this.getSaluti}>Visualizza Saluti</button>
+
+                <h3>{this.state.salutiMsg}</h3>
                 </section>
             </div>
         );
@@ -21,7 +28,15 @@ export default class Welcome extends Component {
 
     getSaluti = () => {
         SalutiService.getSaluti()
-            .then(response => console.log(response));         
+            .then(response => this.handleResponse(response));         
     };
+
+    handleResponse = (response) => {
+        this.setState(
+            {
+                salutiMsg: response.data
+            }
+        );
+    }
 
 }
