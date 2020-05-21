@@ -8,6 +8,8 @@ import LogoutComponent from './Logout/LogoutComponent';
 import HeaderComponent from './Header/HeaderComponent';
 import FooterComponent from './Footer/FooterComponent';
 
+import AuthRoute from './AuthRoute';
+
 export default class GestFidApp extends Component {
     render() {
         return (
@@ -18,8 +20,8 @@ export default class GestFidApp extends Component {
                         <Route path="/" exact component={LoginComponent} />
                         <Route path="/login" component={LoginComponent} />
                         <Route path="/logout" component={LogoutComponent} />
-                        <Route path="/welcome/:userid" component={WelcomeComponent} />
-                        <Route path="/clienti" component={ClientiComponent} />
+                        <AuthRoute path="/welcome/:userid" component={WelcomeComponent} />
+                        <AuthRoute path="/clienti" component={ClientiComponent} />
                         <Route component={ErrorComponent} />
                     </Switch>
                     <FooterComponent />                
