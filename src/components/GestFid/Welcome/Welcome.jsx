@@ -27,7 +27,7 @@ export default class Welcome extends Component {
     }
 
     getSaluti = () => {
-        SalutiService.getSaluti()
+        SalutiService.getSalutiDataParam(this.props.match.params.userid)
             .then(response => this.handleResponse(response))
             .catch(error => this.handleError(error));         
     };
