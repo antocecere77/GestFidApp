@@ -72,7 +72,7 @@ export default class ClientiComponent extends Component {
                             {
                                 this.state.clienti.map (
                                     cliente => 
-                                    <tr>
+                                    <tr key={cliente.codfid}>
                                         <td>{cliente.codfid}</td>
                                         <td>{cliente.nome}</td>
                                         <td>{cliente.indirizzo}</td>
