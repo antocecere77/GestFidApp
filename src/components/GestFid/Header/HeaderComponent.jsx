@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './HeaderComponent.css';
+import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
+import AuthenticationService from '../services/authservice';
 
-export default class HeaderComponent extends Component {
+class HeaderComponent extends Component {
 
-    render() {
+    render() {        
         return ( 
             <div className="HeaderComponent">
                 <header className="section-header">
@@ -32,6 +34,8 @@ export default class HeaderComponent extends Component {
         )
     }
 }
+
+export default withRouter(HeaderComponent);
 
 const Menu = () => {
     return (
@@ -98,14 +102,29 @@ const User = () => {
                     </div>
                 </Link>
 
-                <div className="text">
-                    <span className="text-muted">Benvenuto!</span>
-                    <div> 
-                        <Link to="/logout">Logout</Link>         
-                        <a href="#"> Registra</a>
-                    </div>
-                </div>
+               <UserInfo />
             </div>
         </div>
         )
     }
+
+    const UserInfo = () => {
+        if (AuthenticationService.isLogged()) {
+            return (
+                <div className="text">
+                    <span className="text-muted">Benvenuto {AuthenticationService.getUserInfo()}</span>
+                    <div> 
+                        <Link to="/logout">Logout</Link> |
+                        <Link to="/registra">Registra</Link> |
+                    </div>
+                </div>
+            )}
+        else {
+            return (
+                <Link className="widget-header mr-3" to="/registra">
+                        <div className="icon icon-sm rounded-circle border ">
+                            <i className="fa fa-users"></i>
+                        </div>
+                </Link>
+            )}
+    } 
