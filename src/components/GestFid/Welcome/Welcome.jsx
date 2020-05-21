@@ -28,7 +28,8 @@ export default class Welcome extends Component {
 
     getSaluti = () => {
         SalutiService.getSaluti()
-            .then(response => this.handleResponse(response));         
+            .then(response => this.handleResponse(response))
+            .catch(error => this.handleError(error));         
     };
 
     handleResponse = (response) => {
@@ -37,6 +38,10 @@ export default class Welcome extends Component {
                 salutiMsg: response.data
             }
         );
+    }
+
+    handleError = (error) => {
+        console.log(error);
     }
 
 }
