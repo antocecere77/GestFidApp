@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './LoginComponent.css';
 
 export default class LoginComponent extends Component {
 
@@ -11,14 +12,33 @@ export default class LoginComponent extends Component {
 
     render() {
         return (
-            <div>
-               <p>Accedi alla App GestFid</p>
-               Nome Utente: <input type="text" name="userId" value={this.state.userId} onChange={this.gestMod} />
-               Password: <input type="password" name="password" value={this.state.password} onChange={this.gestMod}/>
-               <button type="button" class="btn btn-primary" onClick={this.login}>Accedi</button>
-               <ConnexOkMsg isLogged={this.state.isLogged}/>
-               <ConnexKoMsg noLogged={this.state.noLogged} />
-            </div>
+            <div className="LoginComponent">
+            <section class="section-content bg padding-y">
+                <div class="container login-container">
+                    <div class="row">
+                        <div class="col-md-6 login-form">
+                            <h3>Accesso a GestFid</h3>
+                            <div class="form-group">
+                                <input type="text" class="form-control"  name="userId" placeholder="Nome Utente" 
+                                    value={this.state.userid} onChange={this.gestMod} />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control"  name="password" placeholder="Password" 
+                                    value={this.state.password} onChange={this.gestMod} />
+                            </div>
+                            <div class="form-group">
+                                <button class="btnSubmit" onClick={this.login}>Connetti</button>
+                            </div>
+                            <div class="form-group">
+                                    <a href="#" class="ForgetPwd">Password Dimenticata?</a>
+                            </div>
+                            <ConnexKoMsg isNoLogged={this.state.noLogged}  /> 
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
         );
     }
 
@@ -46,16 +66,9 @@ export default class LoginComponent extends Component {
     }    
 }
 
-function ConnexOkMsg(props) {
-    if(props.isLogged) {
-        return <div><h3>Connessione eseguita con successo</h3></div>
-    } 
-    return null;
-}
-
 function ConnexKoMsg(props) {
-    if(props.noLogged) {
-        return <div><h3>Connessione fallita</h3></div>
-    } 
+    if (props.isNoLogged) {
+        return <div class="alert alert-danger" role="alert">Spiacente la userid e/o la password sono errate!</div>
+    }
     return null;
 }

@@ -5,8 +5,13 @@ export default class Welcome extends Component {
     render() {
         return (
             <div className="WelcomeComponent">
-                <p>Benvenuti in GestFid</p>
-                <p>Saluti {this.props.match.params.userid}, clicca <Link to="/clienti">qui</Link> per vedere i clienti disponibili</p>
+                <section class="section-content bg padding-y">
+                <header class="section-heading">
+                    <h2 class="section-title">Benvenuti in GestFid</h2>
+                </header>
+                    
+                <p>Saluti {this.props.match.params.userid}, clicca <Link to="/clienti">qui</Link>  per vedere i clienti disponibili</p>
+                </section>
             </div>
         );
     }
