@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './LoginComponent.css';
+import AuthenticationService from '../services/authservice';
 
 export default class LoginComponent extends Component {
 
@@ -46,6 +47,7 @@ export default class LoginComponent extends Component {
         console.log(this.state.userId);
         console.log(this.state.password);
         if(this.state.userId === 'antonio' && this.state.password === '123456') {
+            AuthenticationService.saveUserInfo(this.state.userId);
             this.setState({
                 isLogged: true,
                 noLogged: false
