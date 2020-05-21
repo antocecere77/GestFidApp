@@ -10,9 +10,9 @@ import FooterComponent from './Footer/FooterComponent';
 export default class GestFidApp extends Component {
     render() {
         return (
-            <div className={GestFidApp}>     
-                <HeaderComponent />
+            <div className={GestFidApp}>                   
                 <Router>
+                    <HeaderComponent />
                     <Switch>
                         <Route path="/" exact component={LoginComponent} />
                         <Route path="/login" component={LoginComponent} />
@@ -20,8 +20,8 @@ export default class GestFidApp extends Component {
                         <Route path="/clienti" component={ClientiComponent} />
                         <Route component={ErrorComponent} />
                     </Switch>
-                </Router>           
-                <FooterComponent />                
+                    <FooterComponent />                
+                </Router>                           
             </div>
         );
     }

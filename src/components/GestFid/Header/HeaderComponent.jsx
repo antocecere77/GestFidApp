@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './HeaderComponent.css';
+import { Link } from 'react-router-dom';
 
 export default class HeaderComponent extends Component {
 
@@ -45,7 +46,7 @@ const Menu = () => {
                         <a class="nav-link pl-0" href="#"> <strong>All category</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Clienti</a>
+                        <Link className="nav-link" to="/clienti">Clienti</Link>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Premi</a>
@@ -90,16 +91,17 @@ const User = () => {
                         <span class="notify">0</span>
                     </div>
                 </a>
-                <a href="#" class="widget-header mr-3">
+
+                <Link className="widget-header mr-3" to="/login">                
                     <div class="icon icon-sm rounded-circle border ">
                         <i class="fa fa-user"></i>
                     </div>
-                </a>
+                </Link>
 
                 <div class="text">
                     <span class="text-muted">Benvenuto!</span>
                     <div> 
-                        <a href="#">Logout</a> |  
+                        <Link to="/logout">Logout</Link>         
                         <a href="#"> Registra</a>
                     </div>
                 </div>
