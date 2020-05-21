@@ -11,7 +11,7 @@ import FooterComponent from './Footer/FooterComponent';
 export default class GestFidApp extends Component {
     render() {
         return (
-            <div className={GestFidApp}>                   
+            <div>                   
                 <Router>
                     <HeaderComponent />
                     <Switch>

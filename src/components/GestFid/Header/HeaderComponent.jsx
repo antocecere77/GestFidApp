@@ -7,14 +7,14 @@ export default class HeaderComponent extends Component {
     render() {
         return ( 
             <div className="HeaderComponent">
-                <header class="section-header">
-                    <section class="header-main border-bottom">
-                        <div class="container">
-                            <div class="row align-items-center">
+                <header className="section-header">
+                    <section className="header-main border-bottom">
+                        <div className="container">
+                            <div className="row align-items-center">
                                 
-                                <div class="col-lg-3 col-sm-4 col-md-4 col-5">
-                                    <a href="#" class="brand-wrap">
-                                        <img class="logo" src={`../logo.png`} />
+                                <div className="col-lg-3 col-sm-4 col-md-4 col-5">
+                                    <a href="#" className="brand-wrap">
+                                        <img className="logo" src={`../logo.png`} />
                                     </a>
                                 </div>
                                 
@@ -25,7 +25,7 @@ export default class HeaderComponent extends Component {
                     </section>
                 </header>
 
-                <nav class="navbar navbar-main navbar-expand-lg border-bottom">
+                <nav className="navbar navbar-main navbar-expand-lg border-bottom">
                     <Menu />
                 </nav>
             </div>
@@ -35,27 +35,27 @@ export default class HeaderComponent extends Component {
 
 const Menu = () => {
     return (
-        <div class="container" style={{width:'55%'}}>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav3" 
+        <div className="container" style={{width:'55%'}}>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav3" 
                 aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="main_nav3">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link pl-0" href="#"> <strong>All category</strong></a>
+            <div className="collapse navbar-collapse" id="main_nav3">
+                <ul className="navbar-nav">
+                    <li className="nav-item">
+                        <a className="nav-link pl-0" href="#"> <strong>All category</strong></a>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <Link className="nav-link" to="/clienti">Clienti</Link>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Premi</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Premi</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Statistiche</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Statistiche</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Altro</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Altro</a>
                     </li>
                 </ul>
             </div>
@@ -65,13 +65,13 @@ const Menu = () => {
 
 const Search = () => {
     return (
-        <div class="col-lg-4 col-xl-5 col-sm-8 col-md-4 d-none d-md-block">
-            <form action="#" class="search">
-                <div class="input-group w-100">
-                    <input type="text" class="form-control" style={{width:'55%'}} placeholder="Cerca" />
-                    <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit">
-                        <i class="fa fa-search"></i>
+        <div className="col-lg-4 col-xl-5 col-sm-8 col-md-4 d-none d-md-block">
+            <form action="#" className="search">
+                <div className="input-group w-100">
+                    <input type="text" className="form-control" style={{width:'55%'}} placeholder="Cerca" />
+                    <div className="input-group-append">
+                    <button className="btn btn-primary" type="submit">
+                        <i className="fa fa-search"></i>
                     </button>
                     </div>
                 </div>
@@ -82,24 +82,24 @@ const Search = () => {
 
 const User = () => {
     return (
-        <div class="col-lg-5 col-xl-4 col-sm-8 col-md-4 col-7">
-            <div class="d-flex justify-content-end">
+        <div className="col-lg-5 col-xl-4 col-sm-8 col-md-4 col-7">
+            <div className="d-flex justify-content-end">
 
-                <a href="#" class="widget-header mr-3">
-                    <div class="icon">
-                        <i class="icon-sm rounded-circle border fa fa-shopping-cart"></i>
-                        <span class="notify">0</span>
+                <a href="#" className="widget-header mr-3">
+                    <div className="icon">
+                        <i className="icon-sm rounded-circle border fa fa-shopping-cart"></i>
+                        <span className="notify">0</span>
                     </div>
                 </a>
 
                 <Link className="widget-header mr-3" to="/login">                
-                    <div class="icon icon-sm rounded-circle border ">
-                        <i class="fa fa-user"></i>
+                    <div className="icon icon-sm rounded-circle border ">
+                        <i className="fa fa-user"></i>
                     </div>
                 </Link>
 
-                <div class="text">
-                    <span class="text-muted">Benvenuto!</span>
+                <div className="text">
+                    <span className="text-muted">Benvenuto!</span>
                     <div> 
                         <Link to="/logout">Logout</Link>         
                         <a href="#"> Registra</a>

@@ -6,17 +6,17 @@ export default class FooterComponent extends Component {
     render() {
         return ( 
             <div className="FooterComponent">
-                <footer class="footer text-xs-center">
-                    <p class="text-muted">
+                <footer className="footer text-xs-center">
+                    <p className="text-muted">
                         <small>&copy; 2019</small>
                     </p>
-                    <p class="text-muted">
+                    <p className="text-muted">
                         <a href="#"><small>Termini &amp; Condizioni</small> </a>
                     </p>
-                    <p class="text-muted">
+                    <p className="text-muted">
                         <a href="#"><small>Chi Siamo</small></a>
                     </p>
-                    <p class="text-muted">
+                    <p className="text-muted">
                         <a href="#"><small>I nostri Negozi</small></a>
                     </p>
                 </footer>

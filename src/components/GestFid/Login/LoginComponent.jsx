@@ -13,24 +13,24 @@ export default class LoginComponent extends Component {
     render() {
         return (
             <div className="LoginComponent">
-            <section class="section-content bg padding-y">
-                <div class="container login-container">
-                    <div class="row">
-                        <div class="col-md-6 login-form">
+            <section className="section-content bg padding-y">
+                <div className="container login-container">
+                    <div className="row">
+                        <div className="col-md-6 login-form">
                             <h3>Accesso a GestFid</h3>
-                            <div class="form-group">
-                                <input type="text" class="form-control"  name="userId" placeholder="Nome Utente" 
+                            <div className="form-group">
+                                <input type="text" className="form-control"  name="userId" placeholder="Nome Utente" 
                                     value={this.state.userid} onChange={this.gestMod} />
                             </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control"  name="password" placeholder="Password" 
+                            <div className="form-group">
+                                <input type="password" className="form-control"  name="password" placeholder="Password" 
                                     value={this.state.password} onChange={this.gestMod} />
                             </div>
-                            <div class="form-group">
-                                <button class="btnSubmit" onClick={this.login}>Connetti</button>
+                            <div className="form-group">
+                                <button className="btnSubmit" onClick={this.login}>Connetti</button>
                             </div>
-                            <div class="form-group">
-                                    <a href="#" class="ForgetPwd">Password Dimenticata?</a>
+                            <div className="form-group">
+                                    <a href="#" className="ForgetPwd">Password Dimenticata?</a>
                             </div>
                             <ConnexKoMsg isNoLogged={this.state.noLogged}  /> 
                         </div>
