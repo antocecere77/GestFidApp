@@ -13,7 +13,7 @@ export default class HeaderComponent extends Component {
                                 
                                 <div class="col-lg-3 col-sm-4 col-md-4 col-5">
                                     <a href="#" class="brand-wrap">
-                                        <img class="logo" src="#" />
+                                        <img class="logo" src={`../logo.png`} />
                                     </a>
                                 </div>
                                 
