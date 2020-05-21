@@ -41,7 +41,10 @@ export default class Welcome extends Component {
     }
 
     handleError = (error) => {
-        console.log(error);
+        console.log(error.response.data.message);
+        this.setState({
+            salutiMsg: error.response.data.message
+        })
     }
 
 }
